@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Wand2, Rocket, PiggyBank, Sparkles, Zap, CheckCircle2, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Wand2, Rocket, Sparkles, Zap, CheckCircle2, Facebook, Twitter, Linkedin, Instagram, Mail, MessageSquare, Smartphone, CreditCard, Bot, Clock } from "lucide-react";
 import { toast } from "sonner";
 import koriaLogo from "@/assets/koria-logo.png";
 
@@ -65,18 +66,18 @@ const Index = () => {
             
             <div className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-foreground/70 hover:text-primary transition-colors">
-                Comment ça marche ?
+                Comment ça marche
               </a>
-              <a href="#benefits" className="text-foreground/70 hover:text-primary transition-colors">
-                Avantages
+              <a href="#roadmap" className="text-foreground/70 hover:text-primary transition-colors">
+                Roadmap
               </a>
-              <a href="#form-section" className="text-foreground/70 hover:text-primary transition-colors">
-                Contact
+              <a href="#faq" className="text-foreground/70 hover:text-primary transition-colors">
+                FAQ
               </a>
             </div>
 
             <Button onClick={scrollToForm} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button">
-              Créer mon site
+              Inscription Bêta
             </Button>
           </div>
         </div>
@@ -87,21 +88,17 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <Zap className="w-4 h-4" />
-              <span className="text-sm font-medium">Nouvelle génération de création web</span>
-            </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Votre site web professionnel,{" "}
+              Votre site web professionnel est prêt.{" "}
               <span className="bg-gradient-hero bg-clip-text text-transparent">
-                créé en 2 minutes
+                Il ne manque plus que votre histoire.
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Décrivez simplement votre activité. Koria transforme vos idées en un site web performant. 
-              La solution simple, rapide et abordable pour les entrepreneurs en Afrique.
+              Koria est la première plateforme qui crée votre site internet en quelques minutes grâce à l'IA, 
+              simplement en décrivant votre activité. Conçu pour les entrepreneurs d'Afrique de l'Ouest.
             </p>
 
             <Button 
@@ -109,9 +106,53 @@ const Index = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button text-lg px-8 py-6 h-auto"
             >
-              Commencez gratuitement
+              Recevoir mon site Bêta gratuitement
               <Sparkles className="ml-2 w-5 h-5" />
             </Button>
+            
+            <p className="text-sm text-muted-foreground mt-4">
+              Aucune carte de crédit, aucune compétence technique requise.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Visual Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-12">
+              De l'idée au site web, en un clin d'œil.
+            </h2>
+            
+            <div className="relative bg-gradient-card rounded-2xl p-8 md:p-12 shadow-card">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
+                    <Wand2 className="w-8 h-8 text-primary" />
+                  </div>
+                  <p className="text-muted-foreground">
+                    "Je vends des jus de fruits frais à Cotonou..."
+                  </p>
+                </div>
+                
+                <div className="flex justify-center">
+                  <div className="flex items-center gap-2">
+                    <Zap className="w-8 h-8 text-accent animate-pulse" />
+                    <Sparkles className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto">
+                    <Rocket className="w-8 h-8 text-accent" />
+                  </div>
+                  <p className="font-semibold">
+                    Votre site web professionnel est prêt ! 🎉
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -120,8 +161,8 @@ const Index = () => {
       <section className="py-16 border-y border-border bg-card/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">
-              Propulsé par les meilleures technologies
+            <p className="text-center text-lg text-foreground mb-8 font-medium">
+              Ils nous font confiance pour construire le futur du commerce en ligne
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
               <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors">
@@ -144,17 +185,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="py-20 bg-muted/30">
+      {/* How it works */}
+      <section id="how-it-works" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Pourquoi choisir Koria ?
+                Recevez un aperçu de votre futur site en 3 étapes simples
               </h2>
-              <p className="text-xl text-muted-foreground">
-                La solution qui s'adapte à vos besoins
-              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -162,29 +200,47 @@ const Index = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <Wand2 className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Aucune compétence technique requise</h3>
-                <p className="text-muted-foreground text-lg">
-                  Si vous savez écrire un message, vous savez créer un site avec Koria.
+                <div className="text-center mb-4">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground rounded-full font-bold mb-4">
+                    1
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-center">Inscrivez-vous à la Bêta</h3>
+                <p className="text-muted-foreground text-center">
+                  Remplissez le formulaire avec votre email et quelques informations sur votre activité. 
+                  C'est simple, rapide et 100% gratuit.
                 </p>
               </Card>
 
               <Card className="p-8 bg-gradient-card shadow-card border-0 hover:scale-105 transition-transform duration-300">
                 <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Rocket className="w-7 h-7 text-secondary" />
+                  <MessageSquare className="w-7 h-7 text-secondary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">En ligne en quelques minutes</h3>
-                <p className="text-muted-foreground text-lg">
-                  Obtenez un site web fonctionnel et professionnel plus vite qu'un café.
+                <div className="text-center mb-4">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-secondary text-secondary-foreground rounded-full font-bold mb-4">
+                    2
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-center">Décrivez votre business</h3>
+                <p className="text-muted-foreground text-center">
+                  Dites-nous qui vous êtes, ce que vous proposez, et comment vous contacter. 
+                  Notre IA se charge du reste.
                 </p>
               </Card>
 
               <Card className="p-8 bg-gradient-card shadow-card border-0 hover:scale-105 transition-transform duration-300">
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                  <PiggyBank className="w-7 h-7 text-accent" />
+                  <Mail className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Un prix imbattable</h3>
-                <p className="text-muted-foreground text-lg">
-                  Développez votre présence en ligne sans vous ruiner.
+                <div className="text-center mb-4">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-accent text-accent-foreground rounded-full font-bold mb-4">
+                    3
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-center">Recevez votre site par mail</h3>
+                <p className="text-muted-foreground text-center">
+                  En quelques minutes, recevez un lien vers une première version de votre site web, 
+                  prêt à impressionner vos futurs clients.
                 </p>
               </Card>
             </div>
@@ -192,56 +248,191 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how-it-works" className="py-20">
+      {/* Key Feature Section */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Votre présence digitale, créée sur mesure par l'IA
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Oubliez la complexité technique et les coûts élevés. Koria analyse la description de votre business 
+                  pour générer automatiquement un design professionnel, des textes pertinents et une structure optimisée 
+                  pour la conversion.
+                </p>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Vous obtenez une vitrine en ligne qui reflète la qualité de votre travail et vous permet de développer 
+                  votre activité sans effort.
+                </p>
+                <Button 
+                  onClick={scrollToForm}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button"
+                >
+                  Je décris mon business maintenant
+                  <Sparkles className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="p-6 bg-gradient-card shadow-card border-0">
+                  <CheckCircle2 className="w-8 h-8 text-primary mb-3" />
+                  <h4 className="font-semibold mb-2">Design professionnel</h4>
+                  <p className="text-sm text-muted-foreground">Adapté à votre secteur</p>
+                </Card>
+                <Card className="p-6 bg-gradient-card shadow-card border-0">
+                  <CheckCircle2 className="w-8 h-8 text-primary mb-3" />
+                  <h4 className="font-semibold mb-2">Contenu optimisé</h4>
+                  <p className="text-sm text-muted-foreground">Textes convaincants</p>
+                </Card>
+                <Card className="p-6 bg-gradient-card shadow-card border-0">
+                  <CheckCircle2 className="w-8 h-8 text-primary mb-3" />
+                  <h4 className="font-semibold mb-2">Mobile-first</h4>
+                  <p className="text-sm text-muted-foreground">Parfait sur tous les écrans</p>
+                </Card>
+                <Card className="p-6 bg-gradient-card shadow-card border-0">
+                  <CheckCircle2 className="w-8 h-8 text-primary mb-3" />
+                  <h4 className="font-semibold mb-2">Rapide</h4>
+                  <p className="text-sm text-muted-foreground">Prêt en minutes</p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap Section */}
+      <section id="roadmap" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Comment ça marche ?
+                Et ce n'est que le début. Voici ce qui arrive bientôt.
               </h2>
-              <p className="text-xl text-muted-foreground">
-                3 étapes simples pour votre site web
-              </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                  1
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="p-8 bg-gradient-card shadow-card border-0 hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Smartphone className="w-8 h-8 text-primary" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Décrivez votre business</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Remplissez un formulaire simple avec les informations sur votre activité, vos services et vos objectifs.
-                  </p>
+                <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <Clock className="w-4 h-4" />
+                  Bientôt disponible
                 </div>
-              </div>
+                <h3 className="text-2xl font-bold mb-4">L'Intégration Native Mobile Money</h3>
+                <p className="text-muted-foreground text-lg mb-4">
+                  Encaissez vos paiements, sans friction. Bientôt, Koria intégrera les solutions de paiement mobile 
+                  les plus utilisées (MTN, Moov, Orange Money...).
+                </p>
+                <p className="text-muted-foreground">
+                  Vos clients pourront vous payer directement depuis votre site, de la manière la plus simple et 
+                  la plus sécurisée pour eux.
+                </p>
+              </Card>
 
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                  2
+              <Card className="p-8 bg-gradient-card shadow-card border-0 hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Bot className="w-8 h-8 text-secondary" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Notre IA génère votre site</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Notre intelligence artificielle crée un site web professionnel adapté à votre secteur d'activité en quelques minutes.
-                  </p>
+                <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <Clock className="w-4 h-4" />
+                  Bientôt disponible
                 </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Publiez et partagez !</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Votre site est prêt ! Partagez-le avec vos clients et développez votre activité en ligne.
-                  </p>
-                </div>
-              </div>
+                <h3 className="text-2xl font-bold mb-4">Votre Agent Conversationnel WhatsApp 24/7</h3>
+                <p className="text-muted-foreground text-lg mb-4">
+                  Ne manquez plus jamais une vente. Un agent intelligent alimenté par l'IA sera disponible en continu 
+                  sur WhatsApp pour répondre aux questions de vos clients, prendre leurs commandes et les assister.
+                </p>
+                <p className="text-muted-foreground">
+                  Même lorsque vous dormez, votre business continue de tourner.
+                </p>
+              </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Vos questions, nos réponses
+              </h2>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                  Combien coûte la Bêta ?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  La Bêta est entièrement gratuite ! C'est notre façon de vous faire découvrir la puissance de Koria. 
+                  Il n'y a aucun engagement.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                  En quoi Koria est-il différent de Wix ou WordPress ?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Koria est conçu spécifiquement pour les réalités du marché ouest-africain. Notre différence ? 
+                  Une simplicité radicale (création via IA), et des intégrations natives futures (Mobile Money, WhatsApp) 
+                  que vous ne trouverez nulle part ailleurs.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                  Le site que je reçois en Bêta est-il définitif ?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  C'est un excellent aperçu de ce que notre IA peut faire. Dans la version finale de Koria, 
+                  vous aurez un contrôle total pour personnaliser chaque aspect de votre site. Considérez-le comme 
+                  une base de travail solide et professionnelle.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                  Quand la version complète sera-t-elle disponible ?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Nous travaillons activement pour lancer la version complète dans les prochains mois. 
+                  En vous inscrivant à la Bêta, vous serez le premier informé et bénéficierez d'une offre de 
+                  lancement exclusive.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Prêt à donner à votre business la visibilité qu'il mérite ?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Rejoignez des centaines d'autres entrepreneurs et soyez parmi les premiers à construire 
+              votre avenir en ligne avec Koria.
+            </p>
+            <Button 
+              onClick={scrollToForm}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button text-lg px-8 py-6 h-auto"
+            >
+              S'inscrire à la Bêta et recevoir mon site
+              <Rocket className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
       </section>
@@ -252,10 +443,10 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Lancez votre projet dès maintenant !
+                Inscrivez-vous à la Bêta
               </h2>
               <p className="text-xl text-muted-foreground">
-                Remplissez le formulaire et recevez votre site par email
+                Recevez votre premier site généré par IA gratuitement
               </p>
             </div>
 
@@ -346,15 +537,20 @@ const Index = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin mr-2"></div>
-                      Génération en cours...
+                      Création de votre site...
                     </>
                   ) : (
                     <>
-                      <CheckCircle2 className="mr-2 w-5 h-5" />
-                      Générer mon site web
+                      <Rocket className="mr-2 w-5 h-5" />
+                      Recevoir mon site Bêta gratuit
                     </>
                   )}
                 </Button>
+                
+                <p className="text-sm text-center text-muted-foreground mt-4">
+                  En vous inscrivant, vous acceptez de recevoir des emails de Koria. 
+                  Vous pourrez vous désabonner à tout moment.
+                </p>
               </form>
             </Card>
           </div>
