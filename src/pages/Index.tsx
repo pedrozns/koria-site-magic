@@ -116,6 +116,34 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Social Proof Section */}
+      <section className="py-16 border-y border-border bg-card/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">
+              Propulsé par les meilleures technologies
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+              <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors">
+                Google
+              </div>
+              <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors">
+                Vercel
+              </div>
+              <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors">
+                OpenAI
+              </div>
+              <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors">
+                Microsoft
+              </div>
+              <div className="text-2xl font-bold text-foreground/60 hover:text-foreground transition-colors col-span-2 md:col-span-1">
+                AWS
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section id="benefits" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
