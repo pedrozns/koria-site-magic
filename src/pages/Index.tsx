@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Wand2, Rocket, PiggyBank, Sparkles, Zap, CheckCircle2, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { toast } from "sonner";
+import koriaLogo from "@/assets/koria-logo-dark.png";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -60,12 +61,7 @@ const Index = () => {
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-                Koria
-              </span>
-            </div>
+            <img src={koriaLogo} alt="Koria" className="h-8" />
             
             <div className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-foreground/70 hover:text-primary transition-colors">
@@ -342,12 +338,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-primary" />
-                <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-                  Koria
-                </span>
-              </div>
+              <img src={koriaLogo} alt="Koria" className="h-7 mb-4" />
               <p className="text-muted-foreground">
                 La solution No-Code pour créer votre site web professionnel en quelques minutes.
               </p>
