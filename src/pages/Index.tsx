@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Wand2, Rocket, PiggyBank, Sparkles, Zap, CheckCircle2, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { toast } from "sonner";
-import koriaLogo from "@/assets/koria-logo-dark.png";
+import koriaLogo from "@/assets/koria-logo.png";
 
 const Index = () => {
   const [formData, setFormData] = useState({
